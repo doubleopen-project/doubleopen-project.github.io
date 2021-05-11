@@ -1,0 +1,6 @@
+[book]
+authors = ["Mikko Murto"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Double Open"
