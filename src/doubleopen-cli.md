@@ -1,3 +1,0 @@
-# Double Open CLI
-
-TODO

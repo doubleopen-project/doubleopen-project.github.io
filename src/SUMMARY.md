@@ -2,10 +2,12 @@
 
 [Introduction](./introduction.md)
 [TLDR](./tldr.md)
+[Installation](./installation.md)
 
-- [meta-doubleopen](./meta-doubleopen.md)
-- [Double Open CLI](./doubleopen-cli.md)
-- [Fossology](./fossology.md)
-- [OSS Review Toolkit](./oss-review-toolkit.md)
-  - [Conversion](./ort-conversion.md)
-  - [Policy](./ort-policy.md)
+# Getting Started
+
+- [Setup Yocto](./setup-yocto.md)
+- [Get data from Fossology](./fossology.md)
+- [Convert SPDX to ORT](./ort-conversion.md)
+- [Evaluate](./evaluate.md)
+- [Generate notices](./generate-notices.md)
