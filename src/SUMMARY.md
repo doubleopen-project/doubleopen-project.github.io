@@ -11,3 +11,7 @@
 - [Convert SPDX to ORT](./ort-conversion.md)
 - [Evaluate](./evaluate.md)
 - [Generate notices](./generate-notices.md)
+
+# Migrate Fossology database
+
+- [Migrate database](./fossology-migration.md)
