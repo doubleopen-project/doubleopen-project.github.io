@@ -12,8 +12,26 @@ pipeline needs to be executed without access to the public Fossology instance.
    docker run --rm \
      --volume fossology_database:/dbdata:ro \
      --volume $PWD:/backup \
-     ubuntu tar czvf /backup/DATE.tar.gz /dbdata
+     ubuntu tar czvf /backup/$(date --rfc-3339=date)-database.tar.gz /dbdata
    ```
+
+## Upload archive
+
+1. Upload to Digital Ocean Spaces:
+
+   ```console
+   s3cmd put $(date --rfc-3339=date)-database.tar.gz s3://doubleopen
+   ```
+
+2. Create a copy of the archive named `newest-database.tar.gz`:
+
+   ```console
+   s3cmd cp s3://doubleopen/$(date --rfc-3339=date)-database.tar.gz s3://doubleopen/newest-database.tar.gz
+   ```
+
+## Download archive
+
+1. `s3cmd get s3://doubleopen/newest-database.tar.gz`
 
 ## Create a named Docker volume from the archived database
 
@@ -33,7 +51,7 @@ pipeline needs to be executed without access to the public Fossology instance.
      --volumes-from fossy_migration \
      --volume $PWD:/backup:ro \
      ubuntu bash \
-     -c "cd /dbdata && tar xvf /backup/DATE_database --strip 1"
+     -c "cd /dbdata && tar xvf /backup/newest-database.tar.gz --strip 1"
    ```
 
 ## Launch Fossology
