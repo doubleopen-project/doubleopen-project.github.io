@@ -56,17 +56,7 @@ pipeline needs to be executed without access to the public Fossology instance.
 
 ## Launch Fossology
 
-1. Clone Fossology from <https://github.com/fossology/fossology/>.
-2. `git checkout 19d85bd77e0004206caf69a185377a65787543ec` (currently used version, might work with
-   later versions as well).
-3. Change Docker to use the created volume by changing the volume `database` in
-   `docker-compose.yml` to use an external volume with the given name:
-
-   ```yaml
-   volumes:
-     database:
-       external: true
-       name: fossy_migration
-   ```
-
-4. Launch Fossology with `docker-compose up -d`.
+1. Clone `docker-compose.yml` for Fossology from <https://github.com/doubleopen-project/fossology-migration>.
+2. Create a `.env` file based on `.env.example` and fill the correct database credentials from the
+   primary Fossolog.
+3. Launch Fossology with `docker-compose up -d`.
