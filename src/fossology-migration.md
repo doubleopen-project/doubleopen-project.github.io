@@ -23,7 +23,9 @@ sequenceDiagram
   Build Environment->>Build Environment: Rebuild with updated Fossology database
 ```
 
-## Create archive from the existing database volume
+## Instructions
+
+### Create archive from the existing database volume
 
 1. Get the database volume from existing Fossology instance and create an archive from the volume.
    The volume is expected to be named `fossology_database`.
@@ -35,7 +37,7 @@ sequenceDiagram
      ubuntu tar czvf /backup/$(date --rfc-3339=date)-database.tar.gz /dbdata
    ```
 
-## Upload archive
+### Upload archive
 
 1. Upload to Digital Ocean Spaces:
 
@@ -49,11 +51,11 @@ sequenceDiagram
    s3cmd cp s3://doubleopen/$(date --rfc-3339=date)-database.tar.gz s3://doubleopen/newest-database.tar.gz
    ```
 
-## Download archive
+### Download archive
 
 1. `s3cmd get s3://doubleopen/newest-database.tar.gz`
 
-## Create a named Docker volume from the archived database
+### Create a named Docker volume from the archived database
 
 1. Create a temporary container with a named volume.
 
@@ -74,7 +76,7 @@ sequenceDiagram
      -c "cd /dbdata && tar xvf /backup/newest-database.tar.gz --strip 1"
    ```
 
-## Launch Fossology
+### Launch Fossology
 
 1. Clone `docker-compose.yml` for Fossology from <https://github.com/doubleopen-project/fossology-migration>.
 2. Create a `.env` file based on `.env.example` and fill the correct database credentials from the
