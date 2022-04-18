@@ -14,11 +14,15 @@ needs to be updated from Double Open.
 sequenceDiagram
   autonumber
 
+  rect rgb(191, 223, 255)
+  note right of Build Environment: Compliance Pipeline
   Build Environment->>Build Environment: Build the project with Yocto
   Build Environment->>Internal Fossology: Query for license data
   Internal Fossology->>Build Environment: Return license data for existing files
   Build Environment->>Internal Storage: Upload source archives
+  end
   Internal Storage->>Double Open Fossology: Upload missing source archives
+  Double Open Fossology->>Double Open Fossology: New source files are concluded
   Double Open Fossology->>Internal Fossology: Update database
   Build Environment->>Build Environment: Rebuild with updated Fossology database
 ```
