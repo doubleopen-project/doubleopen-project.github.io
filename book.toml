@@ -10,3 +10,9 @@ create-missing = true
 
 [output.html]
 git-repository-url = "https://github.com/doubleopen-project/doubleopen-project.github.io"
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+[preprocessor]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"

@@ -1,7 +1,27 @@
 # Migrate Fossology database
 
-The Fossology database cane be migrated from an instance to another. This can be useful if the
+The Fossology database can be migrated from an instance to another. This can be useful if the
 pipeline needs to be executed without access to the public Fossology instance.
+
+Below is a high-level diagram for what the pipeline looks like utilizing both the internal Fossology
+and Double Open's database. Provided that the tools are installed, `Build Environment`,
+`Internal Fossology` and `Internal Storage` do not need access to the public internet during the
+the build. After the build the source archives that contain source files not on `Internal Fossology`
+need to be uploaded to the `Double Open Fossology` over the internet, and the `Internal Fossology`
+needs to be updated from Double Open.
+
+```mermaid
+sequenceDiagram
+  autonumber
+
+  Build Environment->>Build Environment: Build the project with Yocto
+  Build Environment->>Internal Fossology: Query for license data
+  Internal Fossology->>Build Environment: Return license data for existing files
+  Build Environment->>Internal Storage: Upload source archives
+  Internal Storage->>Double Open Fossology: Upload missing source archives
+  Double Open Fossology->>Internal Fossology: Update database
+  Build Environment->>Build Environment: Rebuild with updated Fossology database
+```
 
 ## Create archive from the existing database volume
 
