@@ -5,7 +5,7 @@ Double Open aims to automate open source compliance for the
 
 ## Overview
 
-Below is a high-level overview of the compoliance workflow:
+Below is a high-level overview of the compliance workflow:
 
 ```mermaid
 sequenceDiagram
