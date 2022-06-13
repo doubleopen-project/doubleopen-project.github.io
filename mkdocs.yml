@@ -1,9 +1,43 @@
 site_name: Double Open
 theme:
   name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+  logo: assets/double_open_logo_huge.png
+  palette: 
+    primary: white
+  
 markdown_extensions:
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+
+nav:
+  - Home: index.md
+  - OSS Review Toolkit:
+    - ort/installation.md
+    - ort/configuration.md
+    - ort/analyze.md
+    - ort/scan.md
+    - ort/evaluate.md
+    - ort/report.md
+  - Yocto:
+    - yocto/index.md
+    - yocto/tldr.md
+    - Setup:
+      - yocto/installation.md
+      - yocto/setup-yocto.md
+    - Fossology:
+      - yocto/fossology.md
+      - yocto/fossology-migration.md
+    - OSS Review Toolkit:
+      - yocto/oss-review-toolkit.md
+      - yocto/ort-conversion.md
+      - yocto/evaluate.md
+      - yocto/generate-notices.md
+
+extra_css:
+  - stylesheets/extra.css
