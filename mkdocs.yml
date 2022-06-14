@@ -18,12 +18,15 @@ markdown_extensions:
 nav:
   - Home: index.md
   - OSS Review Toolkit:
-    - ort/installation.md
-    - ort/configuration.md
-    - ort/analyze.md
-    - ort/scan.md
-    - ort/evaluate.md
-    - ort/report.md
+    - ort/overview.md
+    - Setup:
+      - ort/installation.md
+      - ort/configuration.md
+    - Pipeline:
+      - ort/analyze.md
+      - ort/scan.md
+      - ort/evaluate.md
+      - ort/report.md
   - Yocto:
     - yocto/index.md
     - yocto/tldr.md

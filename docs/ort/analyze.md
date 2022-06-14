@@ -3,6 +3,10 @@
 ORT Analyzer is used to determine the dependencies of projects in the analyzed repository. Analyzer
 also retrieves and stores metadata about the dependencies.
 
+The target of the ORT pipeline is a repository containing the source code of the projects to
+analyze. ORT supports and can detect dependencies managed by [multiple package
+managers](https://github.com/oss-review-toolkit/ort#analyzer).
+
 Run analysis with the command:
 
 ```shell
@@ -25,7 +29,8 @@ input for the Scanner.
 ## Labels
 
 Labels can be used to toggle evaluator rules based on product needs. The labels are toggled by using
-them as an input for Analyzer with for example `--label nuclear=yes`.
+them as an input for Analyzer with for example `--label nuclear=yes`. Below are the labels supported
+by Double Open's Evaluator rules.
 
 ### Nuclear
 
