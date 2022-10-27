@@ -12,9 +12,9 @@ Uploading is done with Double Open CLI with the following command:
 ```bash
 doubleopen fossology -u <FOSSOLOGY_API_URI> -t <FOSSOLOGY_TOKEN> \
   upload \
-  -s <SPDX_DEPLOY_DIR>/*.tar.bz2 \
   -f <FOSSOLOGY_FOLDER_ID> \
-  --spdx <IMAGE_SPDX>
+  --spdx <IMAGE_SPDX> \
+  <SPDX_DEPLOY_DIR>/*.tar.bz2
 ```
 
 ## Populate SPDX
